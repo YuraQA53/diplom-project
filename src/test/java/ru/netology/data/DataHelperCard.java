@@ -5,7 +5,7 @@ import lombok.Value;
 
 import java.util.Locale;
 
-public class DataHelper {
+public class DataHelperCard {
     static Faker enOption = new Faker(new Locale("en"));
     static Faker faker = new Faker(new Locale("ru"));
     static DataGenerator dataGenerator = new DataGenerator();

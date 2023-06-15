@@ -3,13 +3,13 @@ package ru.netology.test;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
-import ru.netology.data.DataHelper;
+import ru.netology.data.DataHelperCard;
 import ru.netology.data.SQLunits;
 import ru.netology.page.TourPage;
 
 import static com.codeborne.selenide.Selenide.open;
 
-public class PositiveTest {
+public class SadPathTest {
     @BeforeAll
     static void setUpAll() {
         SelenideLogger.addListener("allure", new AllureSelenide());
@@ -30,7 +30,7 @@ public class PositiveTest {
     public void shouldConfirmPaymentApprovedCard() {
         var tourPage = new TourPage();
         var payCard = tourPage.payCard();
-        var approvedCardInformation = DataHelper.getValidCard();
+        var approvedCardInformation = DataHelperCard.getValidCard();
         payCard.enterCardData(approvedCardInformation);
         payCard.successfulCardPayment();
 
@@ -44,7 +44,7 @@ public class PositiveTest {
     public void shouldConfirmCreditApprovedCard() {
         var tourPage = new TourPage();
         var buyCredit = tourPage.buyCredit();
-        var approvedCardInformation = DataHelper.getValidCard();
+        var approvedCardInformation = DataHelperCard.getValidCard();
         buyCredit.enterCreditCardData(approvedCardInformation);
         buyCredit.successfulCreditCardPayment();
 
@@ -58,7 +58,7 @@ public class PositiveTest {
     public void shouldConfirmPaymentCurrentMonthAndYear() {
         var tourPage = new TourPage();
         var payCard = tourPage.payCard();
-        var validCardInformation = DataHelper.getCurrentMonthAndYear();
+        var validCardInformation = DataHelperCard.getCurrentMonthAndYear();
         payCard.enterCardData(validCardInformation);
         payCard.successfulCardPayment();
 
@@ -72,7 +72,7 @@ public class PositiveTest {
     public void shouldConfirmCreditWithCurrentMonthAndYear() {
         var tourPage = new TourPage();
         var buyCredit = tourPage.buyCredit();
-        var validCardInformation = DataHelper.getCurrentMonthAndYear();
+        var validCardInformation = DataHelperCard.getCurrentMonthAndYear();
         buyCredit.enterCreditCardData(validCardInformation);
         buyCredit.successfulCreditCardPayment();
 
