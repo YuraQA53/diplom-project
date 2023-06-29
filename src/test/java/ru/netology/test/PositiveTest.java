@@ -9,7 +9,7 @@ import ru.netology.page.TourPage;
 
 import static com.codeborne.selenide.Selenide.open;
 
-public class HappyPathTest {
+public class PositiveTest {
 
     @BeforeAll
     static void setUpAll() {

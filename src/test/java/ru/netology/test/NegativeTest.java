@@ -9,7 +9,7 @@ import ru.netology.page.TourPage;
 
 import static com.codeborne.selenide.Selenide.open;
 
-public class SadPathTest {
+public class NegativeTest {
     @BeforeAll
     static void setUpAll() {
         SelenideLogger.addListener("allure", new AllureSelenide());
