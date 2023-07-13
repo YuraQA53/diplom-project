@@ -21,7 +21,7 @@
 - 34 негативных (по 2 для каждого способа оплаты).
 Соотношение успешных/неуспешных тестов: 32/6
 
-![Allure]()
+![Allure](https://github.com/YuraQA53/diplom-project/blob/main/documents/Allure.png)
 
 
 ## Общие рекомендации
