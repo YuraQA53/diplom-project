@@ -33,14 +33,14 @@
 Учётные данные и url для подключения задаются в файле [application.properties](https://github.com/netology-code/qa-diploma/blob/master/application.properties)
 
 * запустить IntelliJ IDEA с проектом с репозитария
-             ```
+             
   * git clone    https://github.com/YuraQA53/diplom-project
-             ```
+             
 
   * перейти в папку с проектом 
-         ```
+         
      cd     diplom-project
-         ```
+         
   * запустить docker container (настройки в файле docker-compose.yml)
       ```
          docker-compose up -d
