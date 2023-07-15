@@ -71,6 +71,6 @@
     ```
       
 * в терминале IntelliJ IDEA остановить SUT
-CTRL+C
+      CTRL+C
 
  
