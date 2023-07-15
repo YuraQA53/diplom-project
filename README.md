@@ -66,8 +66,8 @@
       ```
 * Для формирования отчета Allure и его открытия в браузере выполнить команды:
      ```
-    gradlew allureReport
-    gradlew allureServe
+    ./gradlew allureReport
+    ./gradlew allureServe
     ```
       
 * в терминале IntelliJ IDEA остановить SUT
