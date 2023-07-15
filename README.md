@@ -64,12 +64,13 @@
       ```
          ./gradlew clean test "-Ddb.url=jdbc:postgresql://localhost:5432/app"
       ```
-* в терминале IntelliJ IDEA запустить отчеты командой:
+* Для формирования отчета Allure и его открытия в браузере выполнить команды:
+
       ```
-         ./gradlew allureReport (первоначальная команда)
+         ./gradlew allureReport 
       ```
       ```
-         ./gradlew allureServe (запуск и открытие отчетов)
+         ./gradlew allureServe 
       ```
 * в терминале IntelliJ IDEA остановить SUT
 CTRL+C
