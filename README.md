@@ -6,26 +6,26 @@
 Дипломный проект представляет собой автоматизацию тестированя веб-сервиса покупки тура "Путешествие дня - Марракэш", взаимодействующего с СУБД и API Банка.
 [Задание](https://github.com/netology-code/qa-diploma)
 
-[План тестирования](https://github.com/Gendalf21/DiplomSAG/blob/master/documents/Plan.md)
+[План тестирования](https://github.com/YuraQA53/diplom-project/blob/main/documents/Plan.md)
 
-[Отчет по итогам тестирования]()
+[Отчет по итогам тестирования](https://github.com/YuraQA53/diplom-project/blob/main/documents/Report.md)
 
-[Отчет по итогам автоматизации]()
+[Отчет по итогам автоматизации](https://github.com/YuraQA53/diplom-project/blob/main/documents/Summary.md)
 
 ## Подготовка и настройка окружения
 
-* Java 11
-* IntelliJ IDEA 2021.3.2 с подключенными библиотеками файл [build.gradle]() :
-  * JUnit Jupiter
-  * Selenide 
-  * Selenium Java
-  * Lombok
-  * JavaFaker
-  * WebDriverManager 
-  * Apache Commons DbUtils
-  * MySQL Connector
-  * PostgreSQL JDBC Driver
-  * Allure
+Java 11
+IntelliJ IDEA 2021.3.2 с подключенными библиотеками файл [build.gradle](https://github.com/YuraQA53/diplom-project/blob/main/build.gradle) :
+JUnit Jupiter
+Selenide
+Selenium Java
+Lombok
+JavaFaker
+WebDriverManager
+Apache Commons DbUtils
+MySQL Connector
+PostgreSQL JDBC Driver
+Allure
 
 
 ## Установка и запуск приложения, автотестов и отчетов
