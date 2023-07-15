@@ -2,7 +2,7 @@ package ru.netology.page;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import ru.netology.data.DataHelperCard;
+import ru.netology.data.DataHelper;
 
 import java.time.Duration;
 
@@ -28,7 +28,7 @@ public class CardPage extends TourPage {
     private final SelenideElement expiredYearError = $(withText("Истёк срок действия карты"));
     private final SelenideElement invalidDateError = $(withText("Неверно указан срок действия карты"));
 
-    public void enterCardData(DataHelperCard.CardInformation cardInformation) {
+    public void enterCardData(DataHelper.CardInformation cardInformation) {
         cardNumberField.setValue(cardInformation.getCardNumber());
         expirationMonthField.setValue(cardInformation.getMonth());
         expirationYearField.setValue(cardInformation.getYear());
