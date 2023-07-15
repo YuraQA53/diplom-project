@@ -33,38 +33,43 @@
 Учётные данные и url для подключения задаются в файле [application.properties](https://github.com/netology-code/qa-diploma/blob/master/application.properties)
 
 * запустить IntelliJ IDEA с проектом с репозитария
-  * git clone ```https://github.com/YuraQA53/diplom-project```
+             ```
+  * git clone    https://github.com/YuraQA53/diplom-project
+             ```
 
   * перейти в папку с проектом 
-     cd ```diplom-project
+         ```
+     cd     diplom-project
          ```
   * запустить docker container (настройки в файле docker-compose.yml)
-      ```docker-compose up -d
+      ```
+         docker-compose up -d
       ```   
   * дождаться запуска контейнеров
 * в терминале IntelliJ IDEA запустить SUT:
     - с использованием БД MySQL командой 
-
-      ```java -jar artifacts/aqa-shop.jar "-Dspring.datasource.url=jdbc:mysql://localhost:3306/app"
+      ```
+         java -jar artifacts/aqa-shop.jar "-Dspring.datasource.url=jdbc:mysql://localhost:3306/app"
       ```
     - с использованием БД PostgreSQL командой
-
-      ```java -jar artifacts/aqa-shop.jar "-Dspring.datasource.url=jdbc:postgresql://localhost:5432/app"
-      ```
+       ```
+          java -jar artifacts/aqa-shop.jar "-Dspring.datasource.url=jdbc:postgresql://localhost:5432/app"
+       ```
 * в терминале IntelliJ IDEA запустить автотесты командой:
     - для конфигурации БД MySql: 
-
-      ```./gradlew clean test "-Ddb.url=jdbc:mysql://localhost:3306/app"
+      ```
+         ./gradlew clean test "-Ddb.url=jdbc:mysql://localhost:3306/app"
       ```
     - для конфигурации БД PostgreSQL: 
-
-      ```./gradlew clean test "-Ddb.url=jdbc:postgresql://localhost:5432/app"
+      ```
+         ./gradlew clean test "-Ddb.url=jdbc:postgresql://localhost:5432/app"
       ```
 * в терминале IntelliJ IDEA запустить отчеты командой:
-
-    - ```./gradlew allureReport (первоначальная команда)
       ```
-    - ```./gradlew allureServe (запуск и открытие отчетов)
+         ./gradlew allureReport (первоначальная команда)
+      ```
+      ```
+         ./gradlew allureServe (запуск и открытие отчетов)
       ```
 * в терминале IntelliJ IDEA остановить SUT
 CTRL+C
