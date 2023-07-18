@@ -22,11 +22,11 @@
 
 Соотношение успешных/неуспешных тестов: 32/6
 
-### Отчет по результатам тестирования Allure:
+#### Отчет по результатам тестирования Allure:
 
 ![Allure](https://github.com/YuraQA53/diplom-project/blob/main/documents/Allure.png)
 
-### Отчет по результатам тестирования Gradle:
+#### Отчет по результатам тестирования Gradle:
 
 ![Gradle](https://github.com/YuraQA53/diplom-project/blob/main/documents/Gradle.png)
 
