@@ -234,7 +234,7 @@ public class NegativeTest {
         buyCredit.invalidCreditFormat();
     }
 
-    @DisplayName("Card - Wrong year")
+    @DisplayName("Card - Wrong year.")
     @Test
     public void notPayWrongYear() {
         var tourPage = new TourPage();
