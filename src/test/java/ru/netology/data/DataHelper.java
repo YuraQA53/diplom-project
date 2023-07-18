@@ -9,7 +9,7 @@ public class DataHelper {
     static Faker enOption = new Faker(new Locale("en"));
     static Faker faker = new Faker(new Locale("ru"));
     static DataGenerator dataGenerator = new DataGenerator();
-    static CardNumber cardNumber = new CardNumber();
+    static NumberCard cardNumber = new NumberCard();
 
     public static CardInformation getValidCard() {
         return new CardInformation(
