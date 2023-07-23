@@ -1,6 +1,6 @@
 package ru.netology.data;
 
-public class NumberCard {
+public class CardNumber {
     public String getApprovedCardNumber() {
         return "4444444444444441";
     }

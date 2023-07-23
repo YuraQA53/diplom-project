@@ -370,7 +370,7 @@ public class NegativeTest {
         var tourPage = new TourPage();
         var buyCredit = tourPage.buyCredit();
         var invalidCard = DataHelper.getZeroCVV();
-        buyCredit.enterCreditCardData(invalidCard);
+        buyCredit.enterCreditCardData(in1validCard);
         buyCredit.invalidCreditFormat();
     }
 
