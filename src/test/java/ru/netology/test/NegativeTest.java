@@ -22,8 +22,8 @@ public class NegativeTest {
     }
 
     @BeforeEach
-    public void openChrome() {
-        open("http://localhost:8080/");
+    void setup() {
+        open("host");
     }
 
     @DisplayName("Card - DECLINED card")

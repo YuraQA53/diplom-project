@@ -21,8 +21,8 @@ public class PositiveTest {
     }
 
     @BeforeEach
-    public void openChrome() {
-        open("http://localhost:8080/");
+    void setup() {
+        open("host");
     }
 
     @DisplayName("Successful card purchase.")
