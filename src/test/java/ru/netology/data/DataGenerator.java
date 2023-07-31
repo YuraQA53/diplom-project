@@ -18,7 +18,7 @@ public class DataGenerator {
     }
 
     public Year wrongYear() {
-        return new Year(Integer.toString(faker.number().numberBetween(28, 99)));
+        return new Year(Integer.toString(faker.number().numberBetween(10, 22)));
     }
 
     public Month shiftMonth(int numberOfMonths) {
