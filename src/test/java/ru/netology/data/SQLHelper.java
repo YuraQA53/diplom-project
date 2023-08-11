@@ -5,6 +5,7 @@ import lombok.SneakyThrows;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
+
 public class SQLHelper {
 
     @SneakyThrows
@@ -19,7 +20,7 @@ public class SQLHelper {
     @SneakyThrows
     public static String getPaymentId() {
         String payment_Id = null;
-        var idSQL = "SELECT payment_id FROM order_entity ORDER BY created DESC;";
+        var idSQL = "SELECT payment_id FROM order_entity order by created DESC;";
         try (var conn = getConnection();
              var statusStmt = conn.prepareStatement(idSQL)) {
             try (var rs = statusStmt.executeQuery()) {

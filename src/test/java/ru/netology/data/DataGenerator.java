@@ -30,13 +30,11 @@ public class DataGenerator {
         return new Month(Integer.toString(faker.number().numberBetween(13, 99)));
     }
 
-    @Value
-    public static class Year {
-        private String year;
-    }
 
-    @Value
-    public static class Month {
-        private String month;
+    public static String Month() {
+        return month;
     }
-}
+@Value
+
+private String Year;
+    }
