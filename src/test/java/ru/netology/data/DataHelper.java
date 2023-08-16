@@ -14,16 +14,16 @@ public class DataHelper {
     public static CardInformation getValidCard() {
         return new CardInformation(
                 cardNumber.getApprovedCardNumber(),
-                dataGenerator.shiftYear(1),
-                dataGenerator.shiftMonth(1),
+                dataGenerator.shiftYear(1).getYear(),
+                dataGenerator.shiftMonth(1).getMonth(),
                 enOption.name().fullName(),
                 Integer.toString(enOption.number().numberBetween(100, 999)));
     }
 
     public static CardInformation getCurrentMonthAndYear() {
         return new CardInformation(cardNumber.getApprovedCardNumber(),
-                dataGenerator.shiftYear(0),
-                dataGenerator.shiftMonth(0),
+                dataGenerator.shiftYear(0).getYear(),
+                dataGenerator.shiftMonth(0).getMonth(),
                 enOption.name().fullName(),
                 Integer.toString(enOption.number().numberBetween(100, 999)));
     }
@@ -31,8 +31,8 @@ public class DataHelper {
     public static CardInformation getDeclinedCard() {
         return new CardInformation(
                 cardNumber.getDeclinedCardNumber(),
-                dataGenerator.shiftYear(1),
-                dataGenerator.shiftMonth(1),
+                dataGenerator.shiftYear(1).getYear(),
+                dataGenerator.shiftMonth(1).getMonth(),
                 enOption.name().fullName(),
                 Integer.toString(enOption.number().numberBetween(100, 999)));
     }
@@ -49,8 +49,8 @@ public class DataHelper {
     public static CardInformation getCardNumberEmpty() {
         return new CardInformation(
                 " ",
-                dataGenerator.shiftYear(1),
-                dataGenerator.shiftMonth(1),
+                dataGenerator.shiftYear(1).getYear(),
+                dataGenerator.shiftMonth(1).getMonth(),
                 enOption.name().fullName(),
                 Integer.toString(enOption.number().numberBetween(100, 999)));
     }
@@ -59,7 +59,7 @@ public class DataHelper {
         return new CardInformation(
                 cardNumber.getApprovedCardNumber(),
                 " ",
-                dataGenerator.shiftMonth(1),
+                dataGenerator.shiftMonth(1).getMonth(),
                 enOption.name().fullName(),
                 Integer.toString(enOption.number().numberBetween(100, 999)));
     }
@@ -67,7 +67,7 @@ public class DataHelper {
     public static CardInformation getMonthEmpty() {
         return new CardInformation(
                 cardNumber.getApprovedCardNumber(),
-                dataGenerator.shiftYear(2),
+                dataGenerator.shiftYear(2).getYear(),
                 " ",
                 enOption.name().fullName(),
                 Integer.toString(enOption.number().numberBetween(100, 999)));
@@ -76,8 +76,8 @@ public class DataHelper {
     public static CardInformation getHolderEmpty() {
         return new CardInformation(
                 cardNumber.getApprovedCardNumber(),
-                dataGenerator.shiftYear(2),
-                dataGenerator.shiftMonth(2),
+                dataGenerator.shiftYear(2).getYear(),
+                dataGenerator.shiftMonth(2).getMonth(),
                 " ",
                 Integer.toString(enOption.number().numberBetween(100, 999)));
     }
@@ -85,8 +85,8 @@ public class DataHelper {
     public static CardInformation getCVVEmpty() {
         return new CardInformation(
                 cardNumber.getApprovedCardNumber(),
-                dataGenerator.shiftYear(3),
-                dataGenerator.shiftMonth(2),
+                dataGenerator.shiftYear(3).getYear(),
+                dataGenerator.shiftMonth(2).getMonth(),
                 enOption.name().fullName(),
                 "");
     }
@@ -94,16 +94,16 @@ public class DataHelper {
     public static CardInformation getExpiredYear() {
         return new CardInformation(
                 cardNumber.getApprovedCardNumber(),
-                dataGenerator.shiftYear(-1),
-                dataGenerator.shiftMonth(0),
+                dataGenerator.shiftYear(-1).getYear(),
+                dataGenerator.shiftMonth(0).getMonth(),
                 enOption.name().fullName(),
                 Integer.toString(enOption.number().numberBetween(100, 999)));
     }
 
     public static CardInformation getExpiredMonth() {
         return new CardInformation(cardNumber.getApprovedCardNumber(),
-                dataGenerator.shiftYear(0),
-                dataGenerator.shiftMonth(-1),
+                dataGenerator.shiftYear(0).getYear(),
+                dataGenerator.shiftMonth(-1).getMonth(),
                 enOption.name().fullName(),
                 Integer.toString(enOption.number().numberBetween(100, 999)));
     }
@@ -111,8 +111,8 @@ public class DataHelper {
     public static CardInformation getInvalidNumber() {
         return new CardInformation(
                 cardNumber.getInvalidCardNumber(),
-                dataGenerator.shiftYear(1),
-                dataGenerator.shiftMonth(2),
+                dataGenerator.shiftYear(1).getYear(),
+                dataGenerator.shiftMonth(2).getMonth(),
                 enOption.name().fullName(),
                 Integer.toString(enOption.number().numberBetween(100, 999)));
     }
@@ -120,8 +120,8 @@ public class DataHelper {
     public static CardInformation getWrongYear() {
         return new CardInformation(
                 cardNumber.getApprovedCardNumber(),
-                dataGenerator.wrongYear(),
-                dataGenerator.shiftMonth(2),
+                dataGenerator.wrongYear().getYear(),
+                dataGenerator.shiftMonth(2).getMonth(),
                 enOption.name().fullName(),
                 Integer.toString(enOption.number().numberBetween(100, 999)));
     }
@@ -129,8 +129,8 @@ public class DataHelper {
     public static CardInformation getWrongMonth() {
         return new CardInformation(
                 cardNumber.getApprovedCardNumber(),
-                dataGenerator.shiftYear(3),
-                dataGenerator.wrongMonth(),
+                dataGenerator.shiftYear(3).getYear(),
+                dataGenerator.wrongMonth().getMonth(),
                 enOption.name().fullName(),
                 Integer.toString(enOption.number().numberBetween(100, 999)));
     }
@@ -138,8 +138,8 @@ public class DataHelper {
     public static CardInformation getNumericName() {
         return new CardInformation(
                 cardNumber.getApprovedCardNumber(),
-                dataGenerator.shiftYear(5),
-                dataGenerator.shiftMonth(2),
+                dataGenerator.shiftYear(5).getYear(),
+                dataGenerator.shiftMonth(2).getMonth(),
                 Integer.toString(enOption.number().numberBetween(1, 999)),
                 Integer.toString(enOption.number().numberBetween(100, 999)));
     }
@@ -147,8 +147,8 @@ public class DataHelper {
     public static CardInformation getInvalidCVV() {
         return new CardInformation(
                 cardNumber.getApprovedCardNumber(),
-                dataGenerator.shiftYear(5),
-                dataGenerator.shiftMonth(2),
+                dataGenerator.shiftYear(5).getYear(),
+                dataGenerator.shiftMonth(2).getMonth(),
                 faker.name().fullName(),
                 Integer.toString(enOption.number().numberBetween(0, 99)));
     }
@@ -156,8 +156,8 @@ public class DataHelper {
     public static CardInformation getZeroCard() {
         return new CardInformation(
                 "0000000000000000",
-                dataGenerator.shiftYear(5),
-                dataGenerator.shiftMonth(2),
+                dataGenerator.shiftYear(5).getYear(),
+                dataGenerator.shiftMonth(2).getMonth(),
                 faker.name().fullName(),
                 Integer.toString(enOption.number().numberBetween(100, 999)));
     }
@@ -165,7 +165,7 @@ public class DataHelper {
     public static CardInformation getZeroMonth() {
         return new CardInformation(
                 "0000000000000000",
-                dataGenerator.shiftYear(0),
+                dataGenerator.shiftYear(0).getYear(),
                 "00",
                 faker.name().fullName(),
                 Integer.toString(enOption.number().numberBetween(100, 999)));
@@ -174,8 +174,8 @@ public class DataHelper {
     public static CardInformation getZeroCVV() {
         return new CardInformation(
                 cardNumber.getApprovedCardNumber(),
-                dataGenerator.shiftYear(5),
-                dataGenerator.shiftMonth(2),
+                dataGenerator.shiftYear(5).getYear(),
+                dataGenerator.shiftMonth(2).getMonth(),
                 faker.name().fullName(),
                 "000");
     }

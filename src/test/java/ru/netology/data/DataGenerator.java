@@ -12,22 +12,29 @@ public class DataGenerator {
     private final DateTimeFormatter formatterYears = DateTimeFormatter.ofPattern("yy");
     private final DateTimeFormatter formatterMonth = DateTimeFormatter.ofPattern("MM");
 
-    public String shiftYear(int numberOfYears) {
+    public Year shiftYear(int numberOfYears) {
         LocalDate newDate = actualData.plusYears(numberOfYears);
-        return formatterYears.format(newDate);
+        return new Year(formatterYears.format(newDate));
     }
 
-    public String wrongYear() {
-        return Integer.toString(faker.number().numberBetween(10, 22));
+    public Year wrongYear() {
+        return new Year(Integer.toString(faker.number().numberBetween(10, 22)));
     }
 
-    public String shiftMonth(int numberOfMonths) {
+    public Month shiftMonth(int numberOfMonths) {
         LocalDate newDate = actualData.plusMonths(numberOfMonths);
-        return formatterMonth.format(newDate);
+        return new Month(formatterMonth.format(newDate));
     }
 
-    public String wrongMonth() {
-        return Integer.toString(faker.number().numberBetween(13, 99));
+    public Month wrongMonth() {
+        return new Month(Integer.toString(faker.number().numberBetween(13, 99)));
     }
 
-}
+
+    public static String Month() {
+        return month;
+    }
+@Value
+
+private String Year;
+    }
