@@ -23,7 +23,7 @@ public class NegativeTest {
 
     @BeforeEach
     void setup() {
-        open("host");
+        open("http://localhost:8080/");
     }
 
     @DisplayName("Card - DECLINED card")

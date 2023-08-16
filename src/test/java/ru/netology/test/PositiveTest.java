@@ -22,7 +22,7 @@ public class PositiveTest {
 
     @BeforeEach
     void setup() {
-        open("host");
+        open("http://localhost:8080/");
     }
 
     @DisplayName("Successful card purchase.")
