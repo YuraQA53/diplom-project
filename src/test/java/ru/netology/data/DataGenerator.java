@@ -17,16 +17,10 @@ public class DataGenerator {
         return formatterYears.format(newDate);
     }
 
-    public String wrongYear() {
-        return Integer.toString(faker.number().numberBetween(10, 22));
-    }
 
     public String shiftMonth(int numberOfMonths) {
         LocalDate newDate = actualData.plusMonths(numberOfMonths);
         return formatterMonth.format(newDate);
     }
 
-    public String wrongMonth() {
-        return Integer.toString(faker.number().numberBetween(13, 99));
-    }
 }

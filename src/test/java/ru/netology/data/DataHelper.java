@@ -120,7 +120,7 @@ public class DataHelper {
     public static CardInformation getWrongYear() {
         return new CardInformation(
                 cardNumber.getApprovedCardNumber(),
-                dataGenerator.wrongYear(),
+                dataGenerator.shiftYear(-1),
                 dataGenerator.shiftMonth(2),
                 enOption.name().fullName(),
                 Integer.toString(enOption.number().numberBetween(100, 999)));
@@ -130,7 +130,7 @@ public class DataHelper {
         return new CardInformation(
                 cardNumber.getApprovedCardNumber(),
                 dataGenerator.shiftYear(3),
-                dataGenerator.wrongMonth(),
+                dataGenerator.shiftMonth(-1),
                 enOption.name().fullName(),
                 Integer.toString(enOption.number().numberBetween(100, 999)));
     }

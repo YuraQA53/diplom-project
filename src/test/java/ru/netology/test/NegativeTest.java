@@ -5,6 +5,8 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
 import ru.netology.data.DataHelper;
 import ru.netology.data.SQLHelper;
+import ru.netology.page.CardPage;
+import ru.netology.page.CreditPage;
 import ru.netology.page.TourPage;
 
 import static com.codeborne.selenide.Selenide.open;
@@ -23,14 +25,14 @@ public class NegativeTest {
 
     @BeforeEach
     void setup() {
-        open("http://localhost:8080/");
+        open(System.getProperty("host", "http://localhost:8080"));
     }
 
     @DisplayName("Card - DECLINED card")
     @Test
     public void notPayDECLINEDCard() {
         var tourPage = new TourPage();
-        var payCard = tourPage.payCard();
+        var payCard = (CardPage)tourPage.payCard();
         var declinedCard = DataHelper.getDeclinedCard();
         payCard.enterCardData(declinedCard);
         payCard.notSuccessfulCardPayment();
@@ -44,7 +46,7 @@ public class NegativeTest {
     @Test
     public void shouldNotCreditDECLINEDCard() {
         var tourPage = new TourPage();
-        var buyCredit = tourPage.buyCredit();
+        var buyCredit = (CreditPage)tourPage.buyCredit();
         var declinedCard = DataHelper.getDeclinedCard();
         buyCredit.enterCreditCardData(declinedCard);
         buyCredit.notSuccessfulCreditCardPayment();
@@ -58,7 +60,7 @@ public class NegativeTest {
     @Test
     public void notPayEmptyForm() {
         var tourPage = new TourPage();
-        var payCard = tourPage.payCard();
+        var payCard = (CardPage)tourPage.payCard();
         var emptyCardInformation = DataHelper.getAllFieldsEmpty();
         payCard.enterCardData(emptyCardInformation);
         payCard.invalidCardFormat();
@@ -68,7 +70,7 @@ public class NegativeTest {
     @Test
     public void notCreditEmptyForm() {
         var tourPage = new TourPage();
-        var buyCredit = tourPage.buyCredit();
+        var buyCredit = (CreditPage)tourPage.buyCredit();
         var emptyCardInformation = DataHelper.getAllFieldsEmpty();
         buyCredit.enterCreditCardData(emptyCardInformation);
         buyCredit.invalidCreditFormat();
@@ -78,7 +80,7 @@ public class NegativeTest {
     @Test
     public void notPayEmptyCard() {
         var tourPage = new TourPage();
-        var payCard = tourPage.payCard();
+        var payCard = (CardPage)tourPage.payCard();
         var fieldCardEmpty = DataHelper.getCardNumberEmpty();
         payCard.enterCardData(fieldCardEmpty);
         payCard.invalidCardFormat();
@@ -88,7 +90,7 @@ public class NegativeTest {
     @Test
     public void notCreditEmptyCard() {
         var tourPage = new TourPage();
-        var buyCredit = tourPage.buyCredit();
+        var buyCredit = (CreditPage)tourPage.buyCredit();
         var fieldCardEmpty = DataHelper.getCardNumberEmpty();
         buyCredit.enterCreditCardData(fieldCardEmpty);
         buyCredit.invalidCreditFormat();
@@ -98,7 +100,7 @@ public class NegativeTest {
     @Test
     public void notPayEmptyYear() {
         var tourPage = new TourPage();
-        var payCard = tourPage.payCard();
+        var payCard = (CardPage)tourPage.payCard();
         var fieldYearEmpty = DataHelper.getYearEmpty();
         payCard.enterCardData(fieldYearEmpty);
         payCard.invalidCardFormat();
@@ -108,7 +110,7 @@ public class NegativeTest {
     @Test
     public void notCreditEmptyYear() {
         var tourPage = new TourPage();
-        var buyCredit = tourPage.buyCredit();
+        var buyCredit = (CreditPage)tourPage.buyCredit();
         var fieldYearEmpty = DataHelper.getYearEmpty();
         buyCredit.enterCreditCardData(fieldYearEmpty);
         buyCredit.invalidCreditFormat();
@@ -118,7 +120,7 @@ public class NegativeTest {
     @Test
     public void notPayEmptyMonth() {
         var tourPage = new TourPage();
-        var payCard = tourPage.payCard();
+        var payCard = (CardPage)tourPage.payCard();
         var fieldMonthEmpty = DataHelper.getMonthEmpty();
         payCard.enterCardData(fieldMonthEmpty);
         payCard.invalidCardFormat();
@@ -128,7 +130,7 @@ public class NegativeTest {
     @Test
     public void notCreditEmptyMonth() {
         var tourPage = new TourPage();
-        var buyCredit = tourPage.buyCredit();
+        var buyCredit = (CreditPage)tourPage.buyCredit();
         var fieldMonthEmpty = DataHelper.getMonthEmpty();
         buyCredit.enterCreditCardData(fieldMonthEmpty);
         buyCredit.invalidCreditFormat();
@@ -138,7 +140,7 @@ public class NegativeTest {
     @Test
     public void notPayEmptyHolder() {
         var tourPage = new TourPage();
-        var payCard = tourPage.payCard();
+        var payCard = (CardPage)tourPage.payCard();
         var fieldHolderEmpty = DataHelper.getHolderEmpty();
         payCard.enterCardData(fieldHolderEmpty);
         payCard.requiredCardToFillIn();
@@ -148,7 +150,7 @@ public class NegativeTest {
     @Test
     public void notCreditEmptyHolder() {
         var tourPage = new TourPage();
-        var buyCredit = tourPage.buyCredit();
+        var buyCredit = (CreditPage)tourPage.buyCredit();
         var fieldHolderEmpty = DataHelper.getHolderEmpty();
         buyCredit.enterCreditCardData(fieldHolderEmpty);
         buyCredit.requiredCreditToFillIn();
@@ -158,7 +160,7 @@ public class NegativeTest {
     @Test
     public void notPayEmptyCvv() {
         var tourPage = new TourPage();
-        var payCard = tourPage.payCard();
+        var payCard = (CardPage)tourPage.payCard();
         var fieldCvvEmpty = DataHelper.getCVVEmpty();
         payCard.enterCardData(fieldCvvEmpty);
         payCard.invalidCardFormat();
@@ -168,7 +170,7 @@ public class NegativeTest {
     @Test
     public void notCreditEmptyCvv() {
         var tourPage = new TourPage();
-        var buyCredit = tourPage.buyCredit();
+        var buyCredit = (CreditPage)tourPage.buyCredit();
         var fieldCvvEmpty = DataHelper.getCVVEmpty();
         buyCredit.enterCreditCardData(fieldCvvEmpty);
         buyCredit.invalidCreditFormat();
@@ -178,7 +180,7 @@ public class NegativeTest {
     @Test
     public void notPayExpiredYear() {
         var tourPage = new TourPage();
-        var payCard = tourPage.payCard();
+        var payCard = (CardPage)tourPage.payCard();
         var invalidCard = DataHelper.getExpiredYear();
         payCard.enterCardData(invalidCard);
         payCard.expiredCardYear();
@@ -188,7 +190,7 @@ public class NegativeTest {
     @Test
     public void notCreditExpiredYear() {
         var tourPage = new TourPage();
-        var buyCredit = tourPage.buyCredit();
+        var buyCredit = (CreditPage)tourPage.buyCredit();
         var invalidCard = DataHelper.getExpiredYear();
         buyCredit.enterCreditCardData(invalidCard);
         buyCredit.expiredCreditCardYear();
@@ -198,7 +200,7 @@ public class NegativeTest {
     @Test
     public void notPayExpiredMonth() {
         var tourPage = new TourPage();
-        var payCard = tourPage.payCard();
+        var payCard = (CardPage)tourPage.payCard();
         var invalidCard = DataHelper.getExpiredMonth();
         payCard.enterCardData(invalidCard);
         payCard.invalidDate();
@@ -208,7 +210,7 @@ public class NegativeTest {
     @Test
     public void notCreditExpiredMonth() {
         var tourPage = new TourPage();
-        var buyCredit = tourPage.buyCredit();
+        var buyCredit = (CreditPage)tourPage.buyCredit();
         var invalidCard = DataHelper.getExpiredMonth();
         buyCredit.enterCreditCardData(invalidCard);
         buyCredit.invalidDate();
@@ -218,7 +220,7 @@ public class NegativeTest {
     @Test
     public void notPayInvalidNumber() {
         var tourPage = new TourPage();
-        var payCard = tourPage.payCard();
+        var payCard = (CardPage)tourPage.payCard();
         var invalidCard = DataHelper.getInvalidNumber();
         payCard.enterCardData(invalidCard);
         payCard.invalidCardFormat();
@@ -228,7 +230,7 @@ public class NegativeTest {
     @Test
     public void notCreditInvalidNumber() {
         var tourPage = new TourPage();
-        var buyCredit = tourPage.buyCredit();
+        var buyCredit = (CreditPage)tourPage.buyCredit();
         var invalidCard = DataHelper.getInvalidNumber();
         buyCredit.enterCreditCardData(invalidCard);
         buyCredit.invalidCreditFormat();
@@ -238,7 +240,7 @@ public class NegativeTest {
     @Test
     public void notPayWrongYear() {
         var tourPage = new TourPage();
-        var payCard = tourPage.payCard();
+        var payCard = (CardPage)tourPage.payCard();
         var invalidCard = DataHelper.getWrongYear();
         payCard.enterCardData(invalidCard);
         payCard.invalidDate();
@@ -248,7 +250,7 @@ public class NegativeTest {
     @Test
     public void notCreditWrongYear() {
         var tourPage = new TourPage();
-        var buyCredit = tourPage.buyCredit();
+        var buyCredit = (CreditPage)tourPage.buyCredit();
         var invalidCard = DataHelper.getWrongYear();
         buyCredit.enterCreditCardData(invalidCard);
         buyCredit.invalidDate();
@@ -258,7 +260,7 @@ public class NegativeTest {
     @Test
     public void notPayWrongMonth() {
         var tourPage = new TourPage();
-        var payCard = tourPage.payCard();
+        var payCard = (CardPage)tourPage.payCard();
         var invalidCard = DataHelper.getWrongMonth();
         payCard.enterCardData(invalidCard);
         payCard.invalidDate();
@@ -268,7 +270,7 @@ public class NegativeTest {
     @Test
     public void notCreditWrongMonth() {
         var tourPage = new TourPage();
-        var buyCredit = tourPage.buyCredit();
+        var buyCredit = (CreditPage)tourPage.buyCredit();
         var invalidCard = DataHelper.getWrongMonth();
         buyCredit.enterCreditCardData(invalidCard);
         buyCredit.invalidDate();
@@ -278,7 +280,7 @@ public class NegativeTest {
     @Test
     public void notPayNumericHolder() {
         var tourPage = new TourPage();
-        var payCard = tourPage.payCard();
+        var payCard = (CardPage)tourPage.payCard();
         var invalidCard = DataHelper.getNumericName();
         payCard.enterCardData(invalidCard);
         payCard.invalidCardFormat();
@@ -288,7 +290,7 @@ public class NegativeTest {
     @Test
     public void notCreditNumericHolder() {
         var tourPage = new TourPage();
-        var buyCredit = tourPage.buyCredit();
+        var buyCredit = (CreditPage)tourPage.buyCredit();
         var invalidCard = DataHelper.getNumericName();
         buyCredit.enterCreditCardData(invalidCard);
         buyCredit.invalidCreditFormat();
@@ -298,7 +300,7 @@ public class NegativeTest {
     @Test
     public void notPayInvalidCVV() {
         var tourPage = new TourPage();
-        var payCard = tourPage.payCard();
+        var payCard = (CardPage)tourPage.payCard();
         var invalidCard = DataHelper.getInvalidCVV();
         payCard.enterCardData(invalidCard);
         payCard.invalidCardFormat();
@@ -308,7 +310,7 @@ public class NegativeTest {
     @Test
     public void notCreditInvalidCVV() {
         var tourPage = new TourPage();
-        var buyCredit = tourPage.buyCredit();
+        var buyCredit = (CreditPage)tourPage.buyCredit();
         var invalidCard = DataHelper.getInvalidCVV();
         buyCredit.enterCreditCardData(invalidCard);
         buyCredit.invalidCreditFormat();
@@ -318,7 +320,7 @@ public class NegativeTest {
     @Test
     public void notPayZeroNumber() {
         var tourPage = new TourPage();
-        var payCard = tourPage.payCard();
+        var payCard = (CardPage)tourPage.payCard();
         var invalidCard = DataHelper.getZeroCard();
         payCard.enterCardData(invalidCard);
         payCard.notSuccessfulCardPayment();
@@ -328,7 +330,7 @@ public class NegativeTest {
     @Test
     public void notCreditZeroNumber() {
         var tourPage = new TourPage();
-        var buyCredit = tourPage.buyCredit();
+        var buyCredit = (CreditPage)tourPage.buyCredit();
         var invalidCard = DataHelper.getZeroCard();
         buyCredit.enterCreditCardData(invalidCard);
         buyCredit.notSuccessfulCreditCardPayment();
@@ -338,7 +340,7 @@ public class NegativeTest {
     @Test
     public void notPayZeroMonth() {
         var tourPage = new TourPage();
-        var payCard = tourPage.payCard();
+        var payCard = (CardPage)tourPage.payCard();
         var invalidCard = DataHelper.getZeroMonth();
         payCard.enterCardData(invalidCard);
         payCard.invalidDate();
@@ -348,7 +350,7 @@ public class NegativeTest {
     @Test
     public void notCreditZeroMonth() {
         var tourPage = new TourPage();
-        var buyCredit = tourPage.buyCredit();
+        var buyCredit = (CreditPage)tourPage.buyCredit();
         var invalidCard = DataHelper.getZeroMonth();
         buyCredit.enterCreditCardData(invalidCard);
         buyCredit.invalidDate();
@@ -358,7 +360,7 @@ public class NegativeTest {
     @Test
     public void notPayZeroCVV() {
         var tourPage = new TourPage();
-        var payCard = tourPage.payCard();
+        var payCard = (CardPage)tourPage.payCard();
         var invalidCard = DataHelper.getZeroCVV();
         payCard.enterCardData(invalidCard);
         payCard.invalidCardFormat();
@@ -368,7 +370,7 @@ public class NegativeTest {
     @Test
     public void notCreditZeroCVV() {
         var tourPage = new TourPage();
-        var buyCredit = tourPage.buyCredit();
+        var buyCredit = (CreditPage)tourPage.buyCredit();
         var invalidCard = DataHelper.getZeroCVV();
         buyCredit.enterCreditCardData(invalidCard);
         buyCredit.invalidCreditFormat();
