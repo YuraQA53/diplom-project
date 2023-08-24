@@ -24,11 +24,11 @@
 
 #### Отчет по результатам тестирования Allure:
 
-![Allure](https://github.com/YuraQA53/diplom-project/blob/main/documents/Allure.png)
+![Allure](https://github.com/YuraQA53/diplom-project/blob/main/documents/Allure_2023-08-24_20-44-57.jpg)
 
 #### Отчет по результатам тестирования Gradle:
 
-![Gradle](https://github.com/YuraQA53/diplom-project/blob/main/documents/Gradle.png)
+![Gradle](https://github.com/YuraQA53/diplom-project/blob/main/documents/Summary_2023-08-24_20-45-14.jpg)
 
 ## Общие рекомендации
 
